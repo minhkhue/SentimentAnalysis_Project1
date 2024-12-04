@@ -2,13 +2,15 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pickle
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix, ConfusionMatrixDisplay
+import seaborn as sns
 import matplotlib.pyplot as plt
+
 from sklearn.preprocessing import MinMaxScaler
 from utils import TextProcessing as tpr
 from utils import evaluation
 from underthesea import word_tokenize, pos_tag, sent_tokenize
 from sklearn.preprocessing import LabelEncoder
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix, ConfusionMatrixDisplay
 from collections import Counter
 from wordcloud import WordCloud as wc
 label_encoder = LabelEncoder()
@@ -70,7 +72,107 @@ if info_options == 'Tổng quan về dataset':
     if st.session_state['uploaded_data'] is None:
         st.warning('Dataset chưa được tải lên')
     else:
-        st.write()
+        data = st.session_state['uploaded_data']  # Lấy dữ liệu từ session_state
+        # Tạo đồ thị đếm số sao
+        st.write("### Phân bổ số sao đánh giá")
+        fig, ax = plt.subplots(figsize=(10, 6))  # Khởi tạo figure và axis cho Seaborn
+        sns.countplot(data=data, x='so_sao', hue='so_sao', palette='tab10', ax=ax)  # Tạo biểu đồ trên ax
+        # Thêm số count trên cột
+        for container in ax.containers: # type: ignore
+            ax.bar_label(container)
+        # Tùy chỉnh đồ thị
+        ax.set_xticklabels(ax.get_xticklabels(), rotation=90)  # Xoay nhãn trục X
+        ax.set_title('Số sao phân bổ')  # Tiêu đề
+        plt.tight_layout()  # Đảm bảo bố cục không bị cắt
+        # Hiển thị đồ thị trên Streamlit
+        st.pyplot(fig)
+        
+        # Số lượng các từ tích cực
+        st.write("### Số lượng các từ tích cực đã nhận xét")
+        # Tạo đồ thị
+        fig, ax = plt.subplots(figsize=(10, 6))  # Khởi tạo figure và axis
+        sns.countplot(data=data, x='positive_words_count', hue='positive_words_count', legend=False, palette='tab10', ax=ax)  # type: ignore # Tạo biểu đồ
+        # Thêm nhãn trên các cột
+        for container in ax.containers: # type: ignore
+            ax.bar_label(container)
+        # Tùy chỉnh đồ thị
+        ax.set_xticklabels(ax.get_xticklabels(), rotation=90)  # Xoay nhãn trục X
+        ax.set_title('Số lượng các từ tích cực đã nhận xét')  # Thêm tiêu đề
+        plt.tight_layout()  # Đảm bảo bố cục gọn gàng
+        # Hiển thị đồ thị trên Streamlit
+        st.pyplot(fig)
+
+        # Số lượng các từ tiêu cực
+        st.write("### Số lượng các từ tiêu cực đã nhận xét")
+        # Tạo đồ thị
+        fig, ax = plt.subplots(figsize=(10, 6))  # Khởi tạo figure và axis
+        sns.countplot(data=data, x='negative_words_count', hue='negative_words_count', legend=False, palette='tab10', ax=ax)  # type: ignore # Tạo biểu đồ
+        # Thêm nhãn trên các cột
+        for container in ax.containers: # type: ignore
+            ax.bar_label(container)
+        # Tùy chỉnh đồ thị
+        ax.set_xticklabels(ax.get_xticklabels(), rotation=90)  # Xoay nhãn trục X
+        ax.set_title('Số lượng các từ tiêu cực đã nhận xét')  # Thêm tiêu đề
+        plt.tight_layout()  # Đảm bảo bố cục gọn gàng
+        # Hiển thị đồ thị trên Streamlit
+        st.pyplot(fig)
+
+        # Thống kê số lượng bình luận theo quý
+        # Tạo cột 'quarter' (quý) từ cột 'ngay_binh_luan'
+        # Chuyển dạng dữ liệu biến 'ngay_binh_luan' sang biến datetime
+        # Dữ liệu thời gian bất thường.
+        data = data.drop(data[data['ngay_binh_luan'] == '30/11/-0001'].index)
+        data['ngay_binh_luan'] = pd.to_datetime(data['ngay_binh_luan'], format='%Y-%m-%d')
+        data['quarter'] = data['ngay_binh_luan'].dt.to_period('Q').astype(str)
+        comment_count_quarter = data.groupby('quarter').size().reset_index()
+        comment_count_quarter.rename(columns={0: 'so_luong_binh_luan_quy'}, inplace=True)
+        st.write("### Thống kê số lượng bình luận theo quý")
+        # Tạo figure và axis
+        fig, ax = plt.subplots(figsize=(12, 6))
+        # Tạo biểu đồ lineplot
+        sns.lineplot(
+            data=comment_count_quarter, 
+            x='quarter', 
+            y='so_luong_binh_luan_quy', 
+            marker='o', 
+            label='Số lượng bình luận theo quý', 
+            ax=ax
+        )
+        # Thêm giá trị trực tiếp lên biểu đồ
+        for x, y in zip(comment_count_quarter['quarter'], comment_count_quarter['so_luong_binh_luan_quy']):
+            ax.text(x, y, str(y), color='black', ha='center', va='bottom', fontsize=10)
+        # Thiết lập tiêu đề và nhãn
+        ax.set_title('Thống kê số lượng bình luận theo quý', fontsize=16)
+        ax.set_xlabel('Quý', fontsize=12)
+        ax.set_ylabel('Số lượng bình luận theo quý', fontsize=12)
+        ax.set_xticklabels(ax.get_xticklabels(), rotation=90)
+        ax.grid(True)
+        ax.legend()
+        # Hiển thị biểu đồ
+        st.pyplot(fig)
+
+        # Tần suất Positive/Negative
+        st.write("### Tần suất Positive/Negative trên tập dữ liệu")
+        # Tạo figure và axis
+        fig, ax = plt.subplots(figsize=(8, 5))
+        # Tạo biểu đồ countplot
+        sns.countplot(
+            data=data, 
+            x='sentiment', 
+            palette='tab10', 
+            ax=ax
+        )
+        # Thêm nhãn giá trị lên các cột
+        for container in ax.containers: # type: ignore
+            ax.bar_label(container)
+        # Thiết lập tiêu đề và xoay nhãn trục X
+        ax.set_title('Tần suất Positive/Negative trên tập dữ liệu', fontsize=14)
+        ax.set_xticklabels(ax.get_xticklabels(), rotation=90)
+        # Tự động căn chỉnh layout
+        plt.tight_layout()
+        # Hiển thị biểu đồ
+        st.pyplot(fig)
+
 
 # Giao diện phần 'Thông tin về sản phẩm'
 if info_options == 'Thông tin về sản phẩm':
@@ -80,7 +182,8 @@ if info_options == 'Thông tin về sản phẩm':
     else:
         st.write('## Truy suất thông tin về một sản phẩm bất kỳ')
         data = st.session_state['uploaded_data']  # Lấy dữ liệu từ session_state
-        
+        data = data.drop(data[data['ngay_binh_luan'] == '30/11/-0001'].index)
+        data['ngay_binh_luan'] = pd.to_datetime(data['ngay_binh_luan'], format='%Y-%m-%d')
         # Lấy sản phẩm
         data_info = data[['ho_ten', 'ma_san_pham', 'ten_san_pham', 'mo_ta', 'diem_trung_binh', 'gia_ban', 'processed_noi_dung_binh_luan', 'ngay_binh_luan']]
         random_products = data_info.drop_duplicates(subset='ma_san_pham')
@@ -109,7 +212,7 @@ if info_options == 'Thông tin về sản phẩm':
         if st.session_state.selected_ma_san_pham:
             st.write(f'ma_san_pham: {st.session_state.selected_ma_san_pham}')
             # Hiển thị thông tin sản phẩm được chọn
-            selected_product = data[data['ma_san_pham'] == st.session_state.selected_ma_san_pham]
+            selected_product = data[data['ma_san_pham'] == st.session_state.selected_ma_san_pham].sort_values(by='ngay_binh_luan', ascending=False)
 
             if not selected_product.empty:
                 # st.write('#### Bạn vừa chọn:')
@@ -123,7 +226,7 @@ if info_options == 'Thông tin về sản phẩm':
                     st.write(product_description.replace('THÔNG TIN SẢN PHẨM','').replace('Làm sao để phân biệt hàng có trộn hay không ?\nHàng trộn sẽ không thể xuất hoá đơn đỏ (VAT) 100% được do có hàng không nguồn gốc trong đó.\nTại Hasaki, 100% hàng bán ra sẽ được xuất hoá đơn đỏ cho dù khách hàng có lấy hay không. Nếu có nhu cầu lấy hoá đơn đỏ, quý khách vui lòng lấy trước 22h cùng ngày. Vì sau 22h, hệ thống Hasaki sẽ tự động xuất hết hoá đơn cho những hàng hoá mà khách hàng không đăng kí lấy hoá đơn.\nDo xuất được hoá đơn đỏ 100% nên đảm bảo 100% hàng tại Hasaki là hàng chính hãng có nguồn gốc rõ ràng.',''))
                 with info_tabs[1]:
                     for i in range(len(selected_product["noi_dung_binh_luan"])):
-                        st.write(f'{selected_product["ngay_binh_luan"].values[i]}, {selected_product["ho_ten"].values[i]}, {selected_product["so_sao"].values[i]} :star:')
+                        st.write(f'{selected_product["ngay_binh_luan"].dt.strftime("%d-%m-%Y").values[i]}, {selected_product["ho_ten"].values[i]}, {selected_product["so_sao"].values[i]} :star:')
                         st.write(f'{selected_product["noi_dung_binh_luan"].values[i]}')
                 with info_tabs[2]:
                     filtered_product = selected_product.groupby('ma_san_pham')['processed_noi_dung_binh_luan'].apply(' '.join).reset_index()
@@ -263,3 +366,4 @@ if info_options == 'Dự báo thái độ cho comment':
                     input_df['Dự báo thái độ bình luận'] = input_df['label_pred'].apply(lambda txt: 'positive' if txt == 1 else 'negative')
                     st.success('Dự đoán hoàn tất!')
                     st.write('Nội dung bình luận có khả năng:', input_df['Dự báo thái độ bình luận'][0])
+                    
