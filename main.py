@@ -66,7 +66,8 @@ if 'uploaded_data' not in st.session_state:
     st.session_state['uploaded_data'] = None  # Khởi tạo nếu chưa có dữ liệu
     
 ## Các bước thực hiện
-if info_options == 'Tổng quan về hệ thống':
+# if info_options == 'Tổng quan về hệ thống':
+if selected == 'Tổng quan về dataset':
     st.image('img/hasaki_logo.png', use_column_width=True)
     general_info_tabs = st.tabs(['Business Objective', 'Triển khai hệ thống'])
     with general_info_tabs[0]:
