@@ -1,0 +1,334 @@
+hạn_chế
+không_thực_sự_ưng_ý
+chậm
+chậm_chạp
+chậm_trễ
+quá_tệ
+tệ
+tê_hại
+tệ_xài
+nồng
+nồng_nặc
+nồng_hắc
+hắc
+nồng kinh_khủng
+khó_chịu
+bẩn
+mụn_ẩn
+mụn cục
+mụn_cục
+mụn
+bất_tiện
+bết_rích
+bết_rít
+bết
+rít
+nổi_mẩn
+nổi_mụn
+nóng_bừng
+nóng
+cay_mắt
+bí_hơi
+bí_da
+dị_ứng
+khô_da
+da_khô
+da_dầu
+da_sần
+da_thâm
+da_ngứa
+khô
+khô_nám
+nám
+đắt
+sai_lầm
+mờ_nhạt
+siêu_rát
+rát
+rát_da
+da_rát
+thất_vọng
+cảm_giác
+thô
+sần_sùi
+sần
+kém
+đóng_gói
+nghiêm_trọng
+thâm
+vận_chuyển
+ngứa
+âm_điểm
+vô_cùng
+vô_dụng
+nhờn
+da kích_ứng
+da_kích_ứng
+kích_ứng
+thương_hiệu
+cồn
+kinh_khủng
+dịch_vụ
+dịch_vụ tệ
+da_yếu
+bông_bụi
+cứng
+cân_nhắc
+lừa
+lừa_đảo
+lừa_dối
+bình_thường
+nhậy_cảm
+nhạy_cảm
+phí_phạm
+phí
+lãng_phí
+coi_chừng
+bực_mình
+bực
+đỏ
+ửng
+cực_kì tệ
+chất_lượng tệ
+chất_lượng
+cực_tệ
+bụi
+viền_sắc
+lỗi
+nặng_mặt
+châm_chích
+sản_phẩm_tệ
+nhờn_rít
+giả
+giả_mạo
+mụn_bọc
+vón_cục
+vón
+mủ
+hối_tiếc
+hối_hận
+kén
+hiệu_quả cân_nhắc
+tổn_thương
+trải_nghiệm
+nổi_mẩn liti
+trắng_bệch
+tồi_tệ
+tróc
+nhớp_nhớp
+chán
+chán cực
+cực chán
+chán_cực
+cực_chán
+miêu_tả tệ
+đặc_sệt
+không_ưng_ý
+không ưng_ý
+kinh_khủng_mùi
+mùi_kinh_khủng
+đen_nhẻm
+căng_tức
+nóng_nhẹ
+cảm_giác bết
+phụ_thuộc
+trung_bình
+xơ bụi
+chưa_thể
+rát_mặt xước
+nsx
+nhà sản xuất
+không
+buồn
+gay_kích_ứng
+gây_kích_ứng
+bí_tắc
+bã_nhờn
+trôi
+nhược_điểm
+bít_tắt
+bít tắt
+da nhạy_cảm
+châm_chít
+châm chít
+da nám
+thâm_mắt
+thâm mắt
+chăm_chích
+châm chích
+bết_bết
+đỏ_rát
+da yếu
+nóng da
+nóng_da
+xót_ví
+tạm_biệt
+pass
+bét_rít
+hụt_hẫng
+tái_mụn
+thúi
+thối
+nóng_mặt
+thâm thâm
+da sần
+mụn_viêm
+nóng mũi
+nóng_mũi
+đỏ_ngứa
+đỏ ngứa
+nóng nóng
+cùi
+hạn chế
+không thực sự ưng ý
+chậm chạp
+chậm trễ
+quá tệ
+tê hại
+tệ xài
+nồng nặc
+nồng hắc
+nồng kinh khủng
+khó chịu
+mụn ẩn
+bất tiện
+bết rích
+bết rít
+nổi mẩn
+nổi mụn
+nóng bừng
+cay mắt
+bí hơi
+bí da
+dị ứng
+khô da
+da khô
+da dầu
+da thâm
+da ngứa
+khô nám
+sai lầm
+mờ nhạt
+siêu rát
+rát da
+da rát
+thất vọng
+cảm giác
+sần sùi
+đóng gói
+nghiêm trọng
+vận chuyển
+âm điểm
+vô cùng
+vô dụng
+da kích ứng
+kích ứng
+thương hiệu
+kinh khủng
+dịch vụ
+dịch vụ tệ
+bông bụi
+cân nhắc
+lừa đảo
+lừa dối
+bình thường
+nhậy cảm
+nhạy cảm
+phí phạm
+lãng phí
+coi chừng
+bực mình
+cực kì tệ
+chất lượng tệ
+chất lượng
+cực tệ
+viền sắc
+nặng mặt
+sản phẩm tệ
+nhờn rít
+giả mạo
+mụn bọc
+vón cục
+hối tiếc
+hối hận
+hiệu quả cân nhắc
+tổn thương
+trải nghiệm
+nổi mẩn liti
+trắng bệch
+tồi tệ
+nhớp nhớp
+miêu tả tệ
+đặc sệt
+không ưng ý
+kinh khủng mùi
+mùi kinh khủng
+đen nhẻm
+căng tức
+nóng nhẹ
+cảm giác bết
+phụ thuộc
+trung bình
+chưa thể
+rát mặt xước
+gay kích ứng
+gây kích ứng
+bí tắc
+bã nhờn
+nhược điểm
+da nhạy cảm
+chăm chích
+bết bết
+đỏ rát
+xót ví
+tạm biệt
+bét rít
+hụt hẫng
+tái mụn
+nóng mặt
+mụn viêm
+kém chất lượng
+không hợp
+không phản hồi
+không ấn tượng
+không chắc chắn
+không hài lòng
+kém bền
+không đáng tin cậy
+không an toàn
+không tốt
+gây khó dễ
+rối rắm
+không đáng
+không thích
+không chuyên nghiệp
+không phù hợp
+rườm rà
+không tiện lợi
+tệ hại
+không ổn
+kháng nước kém
+không thân thiện
+khó khăn
+thất bại
+không đáng tiền
+rất tệ
+không dễ chịu
+không linh hoạt
+phức tạp
+mùi hắc
+không chất lượng
+không tư vấn
+không đáng giá
+khó xử
+sắc bén
+không ưng
+ghét
+bông thô
+không thể chấp nhận
+mắc tiền
+gắt
+kich ứng
+đắt tiền
+hơi gắt
+không rõ ràng
