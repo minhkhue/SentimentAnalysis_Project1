@@ -105,10 +105,11 @@ if selected == 'Tải dữ liệu lên hệ thống':
     else:
         st.info('Dữ liệu đã được tải lên trước đó.')
         data = st.session_state['uploaded_data']  # Lấy dữ liệu từ session_state
-        st.caption("10 dòng dữ liệu đầu tiên with _italics_ :yellow[colors] ")
+        st.caption(":red[5] dòng dữ liệu đầu tiên ")
         st.dataframe(data[['ma_khach_hang', 'ho_ten', 'ma_san_pham', 'ten_san_pham', 'mo_ta', 'diem_trung_binh', 'so_sao', 'noi_dung_binh_luan', 'ngay_binh_luan', 'gia_ban']].head(5))
         st.text("")
         st.text("")
+        st.caption(":red[5] dòng dữ liệu cuối cùng ")
         st.dataframe(data[['ma_khach_hang', 'ho_ten', 'ma_san_pham', 'ten_san_pham', 'mo_ta', 'diem_trung_binh', 'so_sao', 'noi_dung_binh_luan', 'ngay_binh_luan', 'gia_ban']].tail(5))
 # Giao diện phần 'Tổng quan về dataset'
 if selected == 'Tổng quan về dataset':
