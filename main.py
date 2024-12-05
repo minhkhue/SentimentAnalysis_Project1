@@ -40,15 +40,15 @@ def load_model_and_tfidf():
 proj1_sentiment_lgr_model, proj1_tfidf_vectorizer = load_model_and_tfidf()
 
 # Giao diện phần 'Tải dữ liệu lên hệ thống'
-st.sidebar.title('Menu')
-info_options = st.sidebar.radio(
-    'Các chức năng :robot_face:', 
-    options=['Tổng quan về hệ thống', 'Tải dữ liệu lên hệ thống', 'Tổng quan về dataset', 'Thông tin về sản phẩm', 'Dự báo thái độ cho dataset', 'Dự báo thái độ cho comment']
-)
+# st.sidebar.title('Menu')
+# info_options = st.sidebar.radio(
+#     'Các chức năng :robot_face:', 
+#     options=['Tổng quan về hệ thống', 'Tải dữ liệu lên hệ thống', 'Tổng quan về dataset', 'Thông tin về sản phẩm', 'Dự báo thái độ cho dataset', 'Dự báo thái độ cho comment']
+# )
 with st.sidebar:
     selected = option_menu("MENU", ['Tổng quan về hệ thống', 'Tải dữ liệu lên hệ thống','Tổng quan về dataset','Thông tin về sản phẩm','Dự báo thái độ cho dataset','Dự báo thái độ cho comment'], 
         icons=['globe', 'cloud-upload-fill','info-circle','p-circle','people','body-text'], menu_icon="cast", default_index=0)
-    selected
+    # selected
 st.sidebar.write('-'*3)
 st.sidebar.write('#### :star: Giảng viên hướng dẫn')
 st.sidebar.write(':female-teacher: Thạc Sỹ Khuất Thùy Phương')
