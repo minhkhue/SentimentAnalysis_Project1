@@ -7,3 +7,4 @@ scikit-learn
 underthesea
 pyvi
 wordcloud
+streamlit_option_menu
