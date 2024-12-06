@@ -8,3 +8,4 @@ underthesea
 pyvi
 wordcloud
 streamlit_option_menu
+streamlit_extras
