@@ -397,7 +397,7 @@ if selected == 'Dự báo thái độ cho dataset':
 
                 # Tính toán metrics
                 metrics = evaluation.evaluate_model(data['label'], y_pred)
-                metrics
+                metrics["Accuracy"]
                 st.subheader('Kết quả đánh giá:')
                 st.json(metrics)
 
