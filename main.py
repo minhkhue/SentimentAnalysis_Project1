@@ -400,11 +400,13 @@ if selected == 'Dự báo thái độ cho dataset':
                 # metrics["Accuracy"]
                 # st.subheader('Kết quả đánh giá:')
                 # st.json(metrics)
-                col1, col2, col3, col4 = st.columns(4)
-                col1.metric("Accuracy", metrics["Accuracy"], "1.2 °F")
-                col2.metric("Precision",metrics["Precision"], "-8%")
-                col3.metric("Recall", metrics["Recall"], "4%")
-                col4.metric("F1-Score", metrics["F1-Score"], "4%")
+                col1, col2 = st.columns(2)
+                col1.metric("Accuracy", metrics["Accuracy"], " ")
+                col2.metric("Precision",metrics["Precision"], " ")
+                
+                col3, col4 = st.columns(2)
+                col3.metric("Recall", metrics["Recall"], " ")
+                col4.metric("F1-Score", metrics["F1-Score"], " ")
 
                 # Hiển thị confusion matrix
                 cm = confusion_matrix(data['label'], y_pred)
