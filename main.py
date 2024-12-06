@@ -406,7 +406,7 @@ if selected == 'Dự báo thái độ cho dataset':
                             padding: calc(1em - 1px)
                         }
                         """,
-                ):
+                )
                 metrics = evaluation.evaluate_model(data['label'], y_pred)
                 # metrics["Accuracy"]
                 # st.subheader('Kết quả đánh giá:')
