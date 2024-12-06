@@ -399,6 +399,7 @@ if selected == 'Dự báo thái độ cho dataset':
                 metrics = evaluation.evaluate_model(data['label'], y_pred)
                 st.subheader('Kết quả đánh giá:')
                 st.json(metrics)
+                metrics
 
                 # Hiển thị confusion matrix
                 cm = confusion_matrix(data['label'], y_pred)
