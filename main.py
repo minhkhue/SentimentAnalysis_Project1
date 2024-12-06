@@ -397,9 +397,14 @@ if selected == 'Dự báo thái độ cho dataset':
 
                 # Tính toán metrics
                 metrics = evaluation.evaluate_model(data['label'], y_pred)
-                metrics["Accuracy"]
-                st.subheader('Kết quả đánh giá:')
-                st.json(metrics)
+                # metrics["Accuracy"]
+                # st.subheader('Kết quả đánh giá:')
+                # st.json(metrics)
+                col1, col2, col3, col4 = st.columns(4)
+                col1.metric("Accuracy", metrics["Accuracy"], "1.2 °F")
+                col2.metric("Precision",metrics["Precision"], "-8%")
+                col3.metric("Recall", metrics["Recall"], "4%")
+                col4.metric("F1-Score", metrics["F1-Score"], "4%")
 
                 # Hiển thị confusion matrix
                 cm = confusion_matrix(data['label'], y_pred)
