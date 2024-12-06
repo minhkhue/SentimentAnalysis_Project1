@@ -401,24 +401,21 @@ if selected == 'Dự báo thái độ cho dataset':
                     key="container_with_border",
                     css_styles="""
                         {
+                            background-color: rgba(192,192,192,0.3);
                             border: 1px solid rgba(49, 51, 63, 0.2);
                             border-radius: 0.5rem;
                             padding: calc(1em - 1px)
                         }
                         """,
                 ):
-                    st.markdown("This is a container with a border.")
-                metrics = evaluation.evaluate_model(data['label'], y_pred)
-                # metrics["Accuracy"]
-                # st.subheader('Kết quả đánh giá:')
-                # st.json(metrics)
-                col1, col2 = st.columns(2)
-                col1.metric("Accuracy", round(metrics["Accuracy"],2), " ")
-                col2.metric("Precision",metrics["Precision"], " ")
-                
-                col3, col4 = st.columns(2)
-                col3.metric("Recall", metrics["Recall"], " ")
-                col4.metric("F1-Score", metrics["F1-Score"], " ")
+                    metrics = evaluation.evaluate_model(data['label'], y_pred)
+                    col1, col2 = st.columns(2)
+                    col1.metric("Accuracy", round(metrics["Accuracy"],4), " ")
+                    col2.metric("Precision",round(metrics["Precision"],4), " ")
+                    
+                    col3, col4 = st.columns(2)
+                    col3.metric("Recall", round(metrics["Recall"],4), " ")
+                    col4.metric("F1-Score", roụnd(metrics["F1-Score"],4), " ")
 
                 # Hiển thị confusion matrix
                 cm = confusion_matrix(data['label'], y_pred)
