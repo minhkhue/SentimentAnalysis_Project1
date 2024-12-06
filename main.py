@@ -396,12 +396,23 @@ if selected == 'Dự báo thái độ cho dataset':
                 y_pred = st.session_state['y_pred']
 
                 # Tính toán metrics
+                from streamlit_extras.stylable_container import stylable_container 
+                 with stylable_container(
+                    key="container_with_border",
+                    css_styles="""
+                        {
+                            border: 1px solid rgba(49, 51, 63, 0.2);
+                            border-radius: 0.5rem;
+                            padding: calc(1em - 1px)
+                        }
+                        """,
+                ):
                 metrics = evaluation.evaluate_model(data['label'], y_pred)
                 # metrics["Accuracy"]
                 # st.subheader('Kết quả đánh giá:')
                 # st.json(metrics)
                 col1, col2 = st.columns(2)
-                col1.metric("Accuracy", metrics["Accuracy"], " ")
+                col1.metric("Accuracy", round(metrics["Accuracy"],2, " ")
                 col2.metric("Precision",metrics["Precision"], " ")
                 
                 col3, col4 = st.columns(2)
