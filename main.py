@@ -404,8 +404,7 @@ if selected == 'Dự báo thái độ cho dataset':
                             background-color: rgba(192,192,192,0.3);
                             border: 1px solid rgba(49, 51, 63, 0.2);
                             border-radius: 0.5rem;
-                            padding: calc(1em - 1px);
-                            align-items: center
+                            padding: calc(1em - 1px)
                         }
                         """,
                 ):
