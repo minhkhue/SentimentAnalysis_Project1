@@ -418,6 +418,7 @@ if selected == 'Dự báo thái độ cho dataset':
                     col4.metric("F1-Score",round(metrics["F1-Score"],4), " ")
 
                 # Hiển thị confusion matrix
+        st.header('Confusion Matrix')
                 cm = confusion_matrix(data['label'], y_pred)
                 disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=proj1_sentiment_lgr_model.classes_)
                 fig, ax = plt.subplots()
