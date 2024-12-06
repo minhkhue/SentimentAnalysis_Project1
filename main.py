@@ -406,7 +406,8 @@ if selected == 'Dự báo thái độ cho dataset':
                             padding: calc(1em - 1px)
                         }
                         """,
-                )
+                ):
+                    st.markdown("This is a container with a border.")
                 metrics = evaluation.evaluate_model(data['label'], y_pred)
                 # metrics["Accuracy"]
                 # st.subheader('Kết quả đánh giá:')
