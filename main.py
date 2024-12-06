@@ -413,7 +413,7 @@ if selected == 'Dự báo thái độ cho dataset':
                 # st.subheader('Kết quả đánh giá:')
                 # st.json(metrics)
                 col1, col2 = st.columns(2)
-                col1.metric("Accuracy", round(metrics["Accuracy"]),2, " ")
+                col1.metric("Accuracy", round(metrics["Accuracy"],2), " ")
                 col2.metric("Precision",metrics["Precision"], " ")
                 
                 col3, col4 = st.columns(2)
