@@ -416,7 +416,7 @@ if selected == 'Dự báo thái độ cho dataset':
                     
                     col3, col4 = st.columns(2)
                     col3.metric("Recall",round(metrics["Recall"],4), " ")
-                    col4.metric("F1-Score",roụnd(metrics["F1-Score"],4), " ")
+                    col4.metric("F1-Score",round(metrics["F1-Score"],4), " ")
 
                 # Hiển thị confusion matrix
                 cm = confusion_matrix(data['label'], y_pred)
