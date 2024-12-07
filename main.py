@@ -50,19 +50,19 @@ with st.sidebar:
         icons=['globe', 'cloud-upload-fill','info-circle','p-circle','people','body-text'], menu_icon="menu-button-wide", default_index=0)
     # selected
 st.sidebar.write('-'*3)
-st.sidebar.write('#### :file_folder: Đồ án tốt nghiệp K2999')
+st.sidebar.write('### Đồ án tốt nghiệp K2999')
 st.sidebar.write('#### :bar_chart: Project1: Sentiment Analysis')
 st.sidebar.write('-'*3)
-st.sidebar.write('#### :star: Giảng viên hướng dẫn')
-st.sidebar.write(':female-teacher: Thạc Sỹ Khuất Thùy Phương')
+st.sidebar.write('### Giảng viên hướng dẫn')
+st.sidebar.write('#### :female-teacher: Thạc Sỹ Khuất Thùy Phương')
 st.sidebar.write('-'*3)
-st.sidebar.write('#### Thành viên thực hiện')
-st.sidebar.write(' :boy: Nguyễn Minh Trí')
-st.sidebar.write(' :boy: Võ Huy Quốc')
-st.sidebar.write(' :boy: Phan Trần Minh Khuê')
+st.sidebar.write('### Thành viên thực hiện')
+st.sidebar.write('#### :boy: Nguyễn Minh Trí')
+st.sidebar.write('#### :boy: Võ Huy Quốc')
+st.sidebar.write('#### :boy: Phan Trần Minh Khuê')
 st.sidebar.write('-'*3)
-st.sidebar.write('#### :clock830: Thời gian thực hiện')
-st.sidebar.write(':spiral_calendar_pad: 14/12/2024')
+st.sidebar.write('### Thời gian thực hiện')
+st.sidebar.write('#### :spiral_calendar_pad: 14/12/2024')
 
 ## Kiểm tra dữ liệu đã upload trước đó
 if 'uploaded_data' not in st.session_state:
