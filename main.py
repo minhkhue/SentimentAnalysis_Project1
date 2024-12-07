@@ -50,6 +50,9 @@ with st.sidebar:
         icons=['globe', 'cloud-upload-fill','info-circle','p-circle','people','body-text'], menu_icon="menu-button-wide", default_index=0)
     # selected
 st.sidebar.write('-'*3)
+st.sidebar.write('#### :file_folder: Đồ án tốt nghiệp K2999')
+st.sidebar.write('#### :bar_chart: Project1: Sentiment Analysis')
+st.sidebar.write('-'*3)
 st.sidebar.write('#### :star: Giảng viên hướng dẫn')
 st.sidebar.write(':female-teacher: Thạc Sỹ Khuất Thùy Phương')
 st.sidebar.write('-'*3)
