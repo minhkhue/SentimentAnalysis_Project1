@@ -50,18 +50,18 @@ with st.sidebar:
         icons=['globe', 'cloud-upload-fill','info-circle','p-circle','people','body-text'], menu_icon="menu-button-wide", default_index=0)
     # selected
 st.sidebar.write('-'*3)
-st.sidebar.write('### Đồ án tốt nghiệp K2999 {style=text-transform:uppercase}')
+st.sidebar.write('### ĐỒ ÁN TỐT NGHIỆP K2999 ')
 st.sidebar.write('#### :bar_chart: Project1: Sentiment Analysis')
 st.sidebar.write('-'*3)
-st.sidebar.write('### Giảng viên hướng dẫn{style=text-transform:uppercase}')
+st.sidebar.write('### GIẢNG VIÊN HƯỚNG DẪN')
 st.sidebar.write('#### :female-teacher: Thạc Sỹ Khuất Thùy Phương')
 st.sidebar.write('-'*3)
-st.sidebar.write('### Thành viên thực hiện{style=text-transform:uppercase}')
+st.sidebar.write('### THÀNH VIÊN THỰC HIỆN')
 st.sidebar.write('#### :boy: Nguyễn Minh Trí')
 st.sidebar.write('#### :boy: Võ Huy Quốc')
 st.sidebar.write('#### :boy: Phan Trần Minh Khuê')
 st.sidebar.write('-'*3)
-st.sidebar.write('### Thời gian thực hiện{style=text-transform:uppercase}')
+st.sidebar.write('### THỜI GIAN THỰC HIỆN')
 st.sidebar.write('#### :spiral_calendar_pad: 14/12/2024')
 
 ## Kiểm tra dữ liệu đã upload trước đó
